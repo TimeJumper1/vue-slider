@@ -51,7 +51,23 @@ const app = new Vue(
             },
             selectImage: function(index){
                 this.currentActive = index
+            },
+            autoScroller: function(){
+                
+                
+                setInterval(() => {
+                    if (this.currentActive < this.slides.length -1) {
+                        this.currentActive++;
+                    }else{
+                        this.currentActive = 0;
+                    }
+                },3000);
+                
             }
-        }
+        },
+        beforeMount(){
+            this.autoScroller()
+        },
     }
 );
+
