@@ -29,7 +29,7 @@
                 </div>
                 <!-- thumbnails column -->
                 <div class="thumbnail-all">
-                    <div v-for="element, index in slides" class="thumbnail-single " :class="{'active': index === currentActive }">
+                    <div v-for="element, index in slides" class="thumbnail-single " :class="{'active': index === currentActive } " @click="selectImage(index)">
                         <img :src="element.image" :alt="element.title">
                     </div>
                     <!-- <div class="thumbnail-single">

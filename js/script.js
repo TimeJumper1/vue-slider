@@ -48,6 +48,9 @@ const app = new Vue(
                 }else{
                     this.currentActive = this.slides.length -1;
                 }
+            },
+            selectImage: function(index){
+                this.currentActive = index
             }
         }
     }
