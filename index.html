@@ -12,12 +12,12 @@
 </head>
 <body>
     <div id="root">
-        <div class="container">
+        <div class="container" >
             <!-- slider -->
-            <div class="slider">
+            <div class="slider "  @mouseover="stopScroller" @mouseleave="autoScroller">
                 <!-- bigger image -->
                 <div  class="image-big" >
-                    <div class="single-image  " > <!--@click="autoScroller" se messo dentro il div inizia al click-->
+                    <div class="single-image  "  > <!--@click="autoScroller" se messo dentro il div inizia al click-->
                         <img :src="slides[currentActive].image" :alt="slides[currentActive].title">
     
                         <div class="image-info">
@@ -55,7 +55,7 @@
             </div>
     
         </div>
-
+        
     </div>
 
 

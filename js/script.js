@@ -32,7 +32,11 @@ const app = new Vue(
                     title: 'paradise',
                     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,'
                 }
-            ]
+            ],
+            
+            test: null
+            
+            
         },
         methods: {
             next: function() {
@@ -55,7 +59,7 @@ const app = new Vue(
             autoScroller: function(){
                 
                 
-                setInterval(() => {
+                this.test = setInterval(() => {
                     if (this.currentActive < this.slides.length -1) {
                         this.currentActive++;
                     }else{
@@ -63,11 +67,18 @@ const app = new Vue(
                     }
                 },3000);
                 
+                
+            },
+            stopScroller: function(){
+                clearInterval(this.test)
             }
+            
         },
-        beforeMount(){
+        mounted(){
             this.autoScroller()
         },
+        
+        
     }
 );
 
