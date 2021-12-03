@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <!-- slider -->
+            <div class="slider">
+                <!-- bigger image -->
+                <div  class="image-big">
+                    <div class="single-image  ">
+                        <img :src="slides[currentActive].image" :alt="slides[currentActive].title">
+    
+                        <div class="image-info">
+                            <h2>{{slides[currentActive].title}}</h2>
+                            <p>{{slides[currentActive].text}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- thumbnails column -->
+                <div class="thumbnail-all">
+                    <div v-for="element, index in slides" class="thumbnail-single " :class="{'active': index === currentActive }">
+                        <img :src="element.image" :alt="element.title">
+                    </div>
+                    <!-- <div class="thumbnail-single">
+                        <img src="img/02.jpg" alt="img 2">
+                    </div>
+                    <div class="thumbnail-single">
+                        <img src="img/03.jpg" alt="img 3">
+                    </div>
+                    <div class="thumbnail-single">
+                        <img src="img/04.jpg" alt="img 4">
+                    </div>
+                    <div class="thumbnail-single">
+                        <img src="img/05.jpg" alt="img 5">
+                    </div> -->
+    
+                    <div @click="previous" class="chevron prev">
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                    <div @click="next" class="chevron next">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
